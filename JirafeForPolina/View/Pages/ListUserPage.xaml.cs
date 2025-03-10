@@ -10,31 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JirafeForPolina.View.Windows
+namespace JirafeForPolina.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddChildrenWindow.xaml
+    /// Логика взаимодействия для ListUserPage.xaml
     /// </summary>
-    public partial class AddChildrenWindow : Window
+    public partial class ListUserPage : Page
     {
-        public AddChildrenWindow()
+        public ListUserPage()
         {
             InitializeComponent();
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ExitHL_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

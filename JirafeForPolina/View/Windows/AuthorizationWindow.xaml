@@ -59,13 +59,13 @@
             <TextBlock Text="Пароль " Grid.Row="9" HorizontalAlignment="Left"  FontSize="20"/>
             <PasswordBox Name="PasswordPb" Grid.Row="10"/>
 
-            <TextBlock Grid.Row="12" HorizontalAlignment="Right">
+            <TextBlock FontSize="20" Grid.Row="12" HorizontalAlignment="Right">
     <Hyperlink Name="RegistrationHL" Click="RegistrationHL_Click">
         Нет аккаунта? Зарегистрироваться
     </Hyperlink>
             </TextBlock>
 
-            <Button Name="EntryBtn" Click="EntryBtn_Click" Content="Войти" Grid.Row="14" Width="250" HorizontalAlignment="Right"/>
+            <Button Name="EntryBtn" Click="EntryBtn_Click" Content="Войти" Grid.Row="14" Width="220" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>
 </Window>

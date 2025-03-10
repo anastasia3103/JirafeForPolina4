@@ -9,24 +9,29 @@
     WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
-        <Grid Background="#f2ddc6">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="AUTO" />
-                <ColumnDefinition Width="700" />
-                <ColumnDefinition Width="AUTO" />
-            </Grid.ColumnDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid Background="#f2ddc6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="AUTO" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
 
-            <TextBlock>
-            <Hyperlink>
-                лого
-            </Hyperlink>
-            </TextBlock>
+                <TextBlock>
+     <Hyperlink>
+         лого
+     </Hyperlink>
+                </TextBlock>
 
-            <StackPanel Margin="10" Grid.Column="2"
+                <TextBlock Text="Удивительный жираф" FontSize="30"
+                    Grid.Column="2" FontWeight="Bold" />
+
+                <StackPanel Margin="10" Grid.Column="4"
                         Orientation="Horizontal">
 
                 <TextBlock Grid.Column="2" VerticalAlignment="Center" FontFamily="Myanmar Text" FontWeight="Bold" FontSize="20"   >
@@ -39,7 +44,7 @@
 
                 <TextBlock Grid.Column="4" VerticalAlignment="Center" FontFamily="Myanmar Text" FontWeight="Bold" FontSize="20">
             <Hyperlink Name="CatalogHL" Foreground="#FF7DC269" Click="CatalogHL_Click">
-                Каталог шоу
+                Занятия
             </Hyperlink>
                 </TextBlock>
                 <Separator Height="0" Width="30"/>

@@ -1,0 +1,101 @@
+﻿<Page x:Class="JirafeForPolina.View.Pages.MyActivityPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JirafeForPolina.View.Pages"
+      mc:Ignorable="d" 
+d:DesignHeight="720" d:DesignWidth="1280"
+      Title="MyActivityPage">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Ваши записи на занятия" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions   >
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Поиск занятия" FontSize="30"/>
+            <TextBlock Text="Фильтрация по интересам" Grid.Column="4" FontSize="30" />
+
+            <TextBox Grid.Row="1" Name="ActivityTb"/>
+            <Button Content="Найти"  Name="SearchBtn" Grid.Column="2" Grid.Row="1" Click="SearchBtn_Click" />
+            <ComboBox Grid.Column="4"   Name="FilterCmb" Grid.Row="1" Width="400"
+                   Height="50" HorizontalAlignment="left" SelectionChanged="FilterCmb_SelectionChanged"/>
+
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="700" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ListView Name="ActivityLv" SelectionChanged="ActivityLv_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Дата" Width="150" DisplayMemberBinding="{Binding Price, StringFormat={}{0} ₽}"/>
+                        <GridViewColumn Header="Время" Width="150" DisplayMemberBinding="{Binding Brand.Title}"/>
+                        <GridViewColumn Header="Занятие" Width="200" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Интерес" Width="150" DisplayMemberBinding="{Binding Brand.Title}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!--Описание Занятий-->
+            <Grid Margin="10" Grid.Column="2" Name="UserDetailsGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Информация о занятии" FontWeight="SemiBold" Grid.ColumnSpan="3" FontSize="32"/>
+
+                <Grid  Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock  Text="{Binding Title}" FontSize="30"/>
+                    <TextBlock  Text="{Binding Date, StringFormat=dd/MM/yyy}"  Grid.Row="2"/>
+                    <TextBlock  Text="{Binding Time}" Grid.Row="3"/>
+                    <TextBlock  Text="{Binding Interesting.Title}" Grid.Row="4"/>
+                </Grid>
+
+                <TextBlock Text="Описание " Grid.Row="4" FontWeight="SemiBold" Grid.ColumnSpan="3"/>
+
+                <TextBlock  Text="{Binding Description}" Grid.Row="6"  Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+                <Button Width="200" Grid.Row="7"  Content="Отменить" Name="RecordBtn" Click="RecordBtn_Click"/>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

@@ -64,7 +64,7 @@
             
         <TextBlock Text="Почта " Grid.Row="12" HorizontalAlignment="Left"  FontSize="20"/>
             <TextBox Name="EmailTb" Grid.Row="13"/>
-        <TextBlock Grid.Row="14" HorizontalAlignment="Right">
+        <TextBlock  Grid.Row="14" HorizontalAlignment="Right">
               <Hyperlink Name="EntryHL" Click="EntryHL_Click">
                  Уже есть аккаунт? Войти
             </Hyperlink>

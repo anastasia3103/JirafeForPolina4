@@ -15,26 +15,21 @@ using System.Windows.Shapes;
 namespace JirafeForPolina.View.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AddChildrenWindow.xaml
+    /// Логика взаимодействия для AddActivityWindow.xaml
     /// </summary>
-    public partial class AddChildrenWindow : Window
+    public partial class AddActivityWindow : Window
     {
-        public AddChildrenWindow()
+        public AddActivityWindow()
         {
             InitializeComponent();
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
-        private void ExitHL_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        private void AddActivityBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

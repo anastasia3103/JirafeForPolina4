@@ -3,6 +3,6 @@
     <Style TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontFamily" Value="BookAntiqua"/>
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontSize" Value="25" />
     </Style>
 </ResourceDictionary>

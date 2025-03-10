@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,21 +23,25 @@ namespace JirafeForPolina.View.Windows
         public MainWindow()
         {
             InitializeComponent();
+
+            FrameHelper.MainUserFrame = MainUserFrame;
+            MainUserFrame.Navigate(new View.Pages.MainPage2());
         }
 
         private void MainHL_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameHelper.MainUserFrame.Navigate(new View.Pages.MainPage2());
         }
 
         private void CatalogHL_Click(object sender, RoutedEventArgs e)
         {
 
+            MainUserFrame.Navigate(new View.Pages.ActiviryPage());
         }
 
         private void ProfileHL_Click(object sender, RoutedEventArgs e)
         {
-
+            MainUserFrame.Navigate(new View.Pages.ProfilePage());
         }
     }
 }

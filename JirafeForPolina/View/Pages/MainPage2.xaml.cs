@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace JirafeForPolina.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для MainPage2.xaml
     /// </summary>
-    public partial class MainPage : Window
+    public partial class MainPage2 : Page
     {
-        public MainPage()
+        public MainPage2()
         {
             InitializeComponent();
+        }
+
+        private void TicketsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameHelper.MainUserFrame.Navigate(new TicketsPage());
+        }
+
+        private void EvantsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
