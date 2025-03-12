@@ -26,7 +26,7 @@
             <RowDefinition Height="5" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.ColumnSpan="3" Text="Добавление ребёнка" HorizontalAlignment="Center" FontSize="35"/>
@@ -50,7 +50,7 @@
         <TextBox Name="DescriptionTb" Grid.Row="8" Grid.Column="2"/>
 
         <Button Grid.Column="3" Grid.Row="12" Content="Добавить" 
-                Name="AddBtn" Click="AddBtn_Click"  HorizontalAlignment="Right" Width="120"
+                Name="AddBtn" Click="AddBtn_Click"  HorizontalAlignment="Right" Width="150"
                  />
 
     </Grid>

@@ -28,18 +28,22 @@ namespace JirafeForPolina.View.Windows
             MainUserFrame.Navigate(new View.Pages.MainPage2());
         }
 
-        private void MainHL_Click(object sender, RoutedEventArgs e)
+        private void MainBtn_Click(object sender, RoutedEventArgs e)
         {
             FrameHelper.MainUserFrame.Navigate(new View.Pages.MainPage2());
         }
 
-        private void CatalogHL_Click(object sender, RoutedEventArgs e)
+        private void CatalogBtn_Click(object sender, RoutedEventArgs e)
         {
-
             MainUserFrame.Navigate(new View.Pages.ActiviryPage());
         }
 
-        private void ProfileHL_Click(object sender, RoutedEventArgs e)
+        private void MyRecordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainUserFrame.Navigate(new View.Pages.MyActivityPage());
+        }
+
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
         {
             MainUserFrame.Navigate(new View.Pages.ProfilePage());
         }

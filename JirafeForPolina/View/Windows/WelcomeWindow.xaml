@@ -17,17 +17,20 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
         <Image Height="200" Source="/Resource/милижираф.jpg"  Grid.Row="2"/>
         <TextBlock Text="Удивительный" Grid.Row="4" HorizontalAlignment="Center" FontSize="45"/>
         <TextBlock Text="Жираф" Grid.Row="5" HorizontalAlignment="Center" FontSize="50"/>
 
-        <Button Name="RegBtn" Width="300" Content="Зарегистрироваться" Grid.Row="7" Click="RegBtn_Click"/>
-        <Button Name="AuthorizationBtn" Width="300" Content="Войти" Grid.Row="9" Click="AuthorizationBtn_Click"/>
+        <Button Name="RegBtn" Width="300" Content="Зарегистрироваться" FontWeight="Bold"
+                Grid.Row="9" Click="RegBtn_Click"/>
+        
+        <Button Name="AuthorizationBtn" Width="300" Content="Войти"  FontWeight="Bold"
+                Grid.Row="7" Click="AuthorizationBtn_Click"/>
 
 
 

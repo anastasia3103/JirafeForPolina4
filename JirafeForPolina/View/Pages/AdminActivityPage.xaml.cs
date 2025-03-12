@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JirafeForPolina.View.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,8 @@ namespace JirafeForPolina.View.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            AddActivityWindow addActivityWindow = new AddActivityWindow();
+            addActivityWindow.ShowDialog();
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)

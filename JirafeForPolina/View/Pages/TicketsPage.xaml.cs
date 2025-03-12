@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace JirafeForPolina.View.Pages
         public TicketsPage()
         {
             InitializeComponent();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameHelper.MainUserFrame.Navigate(new MainPage2());
         }
     }
 }

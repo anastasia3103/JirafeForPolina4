@@ -1,4 +1,5 @@
 ﻿using JirafeForPolina.AppData;
+using JirafeForPolina.View.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace JirafeForPolina.View.Pages
 
         private void EvantsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameHelper.MainUserFrame.Navigate(new ActiviryPage());
         }
     }
 }

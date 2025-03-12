@@ -213,5 +213,26 @@
   <ItemGroup>
     <Resource Include="Resource\милижираф.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\logotipJirafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\фон.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\logotip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Картинка Жираф.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\igrivaya3.png" />
+    <Resource Include="Resource\igrovaya1.png" />
+    <Resource Include="Resource\igrovaya2.png" />
+    <Resource Include="Resource\igrovaya4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\igrivaya5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

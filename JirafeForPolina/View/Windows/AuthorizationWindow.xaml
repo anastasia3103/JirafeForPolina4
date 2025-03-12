@@ -9,6 +9,11 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         MinHeight="200" MinWidth="500">
     <Grid Margin="20">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="\Resource\фон.jpg"/>
+        </Grid.Background>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="10" />
@@ -24,11 +29,15 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Image  Grid.Row="1"  Source="/Resource/милижираф.jpg" />
 
-            <TextBlock Text="Удивительный" Grid.Row="3" HorizontalAlignment="Center" FontSize="45"/>
-            <TextBlock Text="Жираф" Grid.Row="4" HorizontalAlignment="Center"
-               FontSize="50" VerticalAlignment="Top"/>
+
+
+            <Image Source="\Resource\Картинка Жираф.png" Grid.Row="1"/>
+
+
+            <TextBlock Text="УдИвиТельНый" Grid.Row="3" Foreground="#FDAC54" FontSize="50"/>
+            <TextBlock Text="Ж И Р А Ф" Foreground="#653D19" Grid.Row="4"
+ FontSize="50" HorizontalAlignment="Center"/>
         </Grid>
 
         <Grid Grid.Column="2">
@@ -47,7 +56,7 @@
                 <RowDefinition Height="15" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="20" />
-                <RowDefinition Height="40" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
 
@@ -65,7 +74,8 @@
     </Hyperlink>
             </TextBlock>
 
-            <Button Name="EntryBtn" Click="EntryBtn_Click" Content="Войти" Grid.Row="14" Width="220" HorizontalAlignment="Right"/>
+            <Button Name="EntryBtn" Click="EntryBtn_Click" 
+                    Content="Войти" Grid.Row="14" Width="220" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>
 </Window>

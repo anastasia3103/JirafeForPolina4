@@ -5,21 +5,24 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JirafeForPolina.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+d:DesignHeight="720" d:DesignWidth="1280"
       Title="TicketsPage">
     <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="10" Padding="5" Background="Transparent" BorderBrush="Transparent"
-                Foreground="#FF0078D7" FontSize="14" FontWeight="Bold"/>
+        <Button Content="Назад" HorizontalAlignment="Left" 
+                Margin="10" Padding="5" Background="Transparent" 
+                BorderBrush="Transparent"
+                 FontSize="14" FontWeight="Bold"
+                Name="BackBtn" Click="BackBtn_Click"/>
         
-        <TextBlock Text="Билеты" FontSize="55" Grid.Row="2" FontWeight="Bold" Foreground="#FF0078D7" HorizontalAlignment="Center"/>
+        <TextBlock Text="Билеты" FontSize="55" Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Center"/>
       
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
@@ -33,9 +36,9 @@
                 BorderBrush="#FF0078D7" BorderThickness="2" Width="580" Height="400" CornerRadius="5" Padding="30">
                 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Будние дни" FontSize="50" FontWeight="Bold"  Foreground="#FF0078D7"/>
-                    <TextBlock Text="Безлимит пн-чт ..............1290 ₽" FontSize="35" Foreground="#FF0078D7" Margin="0,5,0,0"/>
-                    <TextBlock Text="Безлимит пт .....................1490 ₽" FontSize="35" Foreground="#FF0078D7" Margin="0,5,0,0"/>
+                    <TextBlock Text="Будние дни" FontSize="50" FontWeight="Bold"  />
+                    <TextBlock Text="Безлимит пн-чт ..............1290 ₽" FontSize="35"  Margin="0,5,0,0"/>
+                    <TextBlock Text="Безлимит пт .....................1490 ₽" FontSize="35"  Margin="0,5,0,0"/>
                 </StackPanel>
             </Border>
 
@@ -43,8 +46,8 @@
          BorderBrush="#FF0078D7" BorderThickness="2" CornerRadius="5" Width="580" Height="400" Padding="30">
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Выходные дни" FontSize="50" FontWeight="Bold" Foreground="#FF0078D7"/>
-                    <TextBlock Text="Безлимит ...............1290 ₽" FontSize="35" Foreground="#FF0078D7" Margin="0,5,0,0"/>
+                    <TextBlock Text="Выходные дни" FontSize="50" FontWeight="Bold" />
+                    <TextBlock Text="Безлимит ...............1290 ₽" FontSize="35"  Margin="0,5,0,0"/>
                 </StackPanel>
             </Border>
         </Grid>

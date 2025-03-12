@@ -9,27 +9,32 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         MinHeight="200" MinWidth="700">
     <Grid Margin="20">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="\Resource\фон.jpg"/>
+        </Grid.Background>
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="600" />
         </Grid.ColumnDefinitions>
         
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
-                <RowDefinition Height="200" />
+                <RowDefinition Height="170" />
+                <RowDefinition Height="250" />
                 <RowDefinition Height="10" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Image  Grid.Row="1"  Source="/Resource/милижираф.jpg" />
+            <Image  Grid.Row="1" 
+                    Source="/Resource/Картинка Жираф.png" />
 
-            <TextBlock Text="Удивительный" Grid.Row="3" HorizontalAlignment="Center" FontSize="45"/>
-            <TextBlock Text="Жираф" Grid.Row="4" HorizontalAlignment="Center"
-                       FontSize="50" VerticalAlignment="Top"/>
+            <TextBlock Text="УдИвиТельНый" Grid.Row="3" Foreground="#FDAC54" FontSize="55"/>
+                <TextBlock Text="Ж И Р А Ф" Foreground="#653D19" Grid.Row="4"
+ FontSize="55" HorizontalAlignment="Center"/>
         </Grid>
 
         <!-- #region левая часть-->
@@ -39,38 +44,55 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="15" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="15" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="15" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="15" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Регистрация" Grid.Row="1" HorizontalAlignment="Center" FontSize="40" />
-        <TextBlock Text="ФИО " Grid.Row="3" HorizontalAlignment="Left"  FontSize="20"/>
-        <TextBox Name="SurnameTb" Grid.Row="4"/>
+        <TextBlock Text="Регистрация" Grid.Row="1" FontWeight="Bold"
+                   HorizontalAlignment="Center" 
+                   FontSize="40" />
             
-        <TextBlock Text="Дата рождения " Grid.Row="6" HorizontalAlignment="Left"  FontSize="20"/>
-        <DatePicker Name="DayeOfBirthDp" Grid.Row="7"/>
+        <TextBlock Text="Фамилия " Grid.Row="3" HorizontalAlignment="Left"  FontSize="20"/>
+        <TextBox Name="FirstnameTb" Grid.Row="4"/>
+
+            <TextBlock Text="Имя " Grid.Row="6" HorizontalAlignment="Left"  FontSize="20"/>
+            <TextBox Name="NameTb" Grid.Row="7"/>
+
+            <TextBlock Text="Отчество " Grid.Row="9" HorizontalAlignment="Left"  FontSize="20"/>
+            <TextBox Name="MiddlenameTb" Grid.Row="10"/>
+
+            <TextBlock Text="Дата рождения " Grid.Row="12" HorizontalAlignment="Left"  FontSize="20"/>
+        <DatePicker Name="DayeOfBirthDp" Grid.Row="13"/>
             
-        <TextBlock Text="Номер телефона " Grid.Row="9" HorizontalAlignment="Left"  FontSize="20"/>
-        <TextBox Name="NumberPhoneTb" Grid.Row="10"/>
+        <TextBlock Text="Номер телефона " Grid.Row="15" HorizontalAlignment="Left"  FontSize="20"/>
+        <TextBox Name="NumberPhoneTb" Grid.Row="16"/>
             
-        <TextBlock Text="Почта " Grid.Row="12" HorizontalAlignment="Left"  FontSize="20"/>
-            <TextBox Name="EmailTb" Grid.Row="13"/>
-        <TextBlock  Grid.Row="14" HorizontalAlignment="Right">
+        <TextBlock Text="Почта " Grid.Row="18" HorizontalAlignment="Left"  FontSize="20"/>
+            <TextBox Name="EmailTb" Grid.Row="19"/>
+        <TextBlock  Grid.Row="21" FontSize="15" HorizontalAlignment="Right">
               <Hyperlink Name="EntryHL" Click="EntryHL_Click">
                  Уже есть аккаунт? Войти
             </Hyperlink>
         </TextBlock>
 
-        <Button Name="EntryBtn" Click="EntryBtn_Click_1"  Content="Зарегистрироваться" 
+        <Button Name="RegBtn" Click="RegBtn_Click"  Content="Зарегистрироваться" 
                 Grid.Row="26" Height="50" Width="250" HorizontalAlignment="Right"/>
         </Grid>
         <!--#endregion-->

@@ -17,36 +17,49 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="10" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="30" />
                 <RowDefinition Height="60" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Text="ПАРК РАЗВЛЕЧЕНИЙ" Grid.Row="1" FontSize="50"/>
-            <TextBlock Text="Удивительный" Grid.Row="3"  FontSize="55"/>
-            <TextBlock Text="Ж И Р А Ф" Grid.Row="4"
-           FontSize="55" VerticalAlignment="Top"/>
+            <TextBlock Text="ПАРК РАЗВЛЕЧЕНИЙ" FontWeight="Bold" Grid.Row="1" FontSize="50"/>
+            <TextBlock Text="Сделай свой день лучше с нами!" Grid.Row="3"
+        TextWrapping="Wrap"  FontSize="40"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center">
+                <Button Name="TicketsBtn" Content="Билеты" Width="200" Click="TicketsBtn_Click"/>
+                <Separator Height="0" Width="100"/>
+                <Button Name="EvantsBtn" Content="Занятия"
+                    Width="200" Click="EvantsBtn_Click"
+                   />
+            </StackPanel>
+
         </Grid>
 
         <Grid Grid.Column="2" Margin="30" VerticalAlignment="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
                 <RowDefinition Height="50" />
-                <RowDefinition Height="40" />
-                <RowDefinition Height="60" />
-                <RowDefinition Height="1" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Наша игровая" FontWeight="Bold" FontSize="30" />
+            <Image Source="/Resource/igrivaya3.png" Grid.Row="2" Stretch="Fill"/>
+            <Image Source="/Resource/igrovaya1.png" Grid.Row="5" Grid.Column="2" Stretch="Fill"/>
+            <Image Source="/Resource/igrivaya5.png" Grid.Column="3"  Grid.Row="2" Stretch="Fill"/>
+            <Image Source="/Resource/igrovaya4.png"  Grid.Row="5" Stretch="Fill"/>
 
-            <TextBlock Text="Сделай свой день лучше с нами!" Grid.Row="1"
-                   TextWrapping="Wrap"  FontSize="40"/>
-            <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
-                <Button Name="TicketsBtn" Content="Билеты" Width="200" Click="TicketsBtn_Click"/>
-                <Separator Height="0" Width="100"/>
-                <Button Name="EvantsBtn" Content="Мастер-классы"
-                    Width="200" Click="EvantsBtn_Click"
-                   />
-            </StackPanel>
+            
+
+           
 
 
         </Grid>
