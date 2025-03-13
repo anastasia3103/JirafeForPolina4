@@ -45,22 +45,22 @@ d:DesignHeight="720" d:DesignWidth="1280"
 
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="700" />
+                <ColumnDefinition Width="750" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
             <ListView Name="ActivityLv" SelectionChanged="ActivityLv_SelectionChanged_1">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Дата" Width="150" DisplayMemberBinding="{Binding Price, StringFormat={}{0} ₽}"/>
-                        <GridViewColumn Header="Время" Width="150" DisplayMemberBinding="{Binding Brand.Title}"/>
+                        <GridViewColumn Header="Дата" Width="150" DisplayMemberBinding="{Binding Date, StringFormat={}{0:dd/MM/yyy}}"/>
+                        <GridViewColumn Header="Время" Width="150" DisplayMemberBinding="{Binding Time}"/>
                         <GridViewColumn Header="Занятие" Width="200" DisplayMemberBinding="{Binding Title}"/>
-                        <GridViewColumn Header="Интерес" Width="150" DisplayMemberBinding="{Binding Brand.Title}"/>
+                        <GridViewColumn Header="Интерес" Width="150" DisplayMemberBinding="{Binding Interesting.Title}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
 
             <!--Описание Занятий-->
-            <Grid Margin="10" Grid.Column="2" Name="UserDetailsGrid">
+            <Grid Margin="10" Grid.Column="2" Name="ActivityDetailsGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="10" />
@@ -74,18 +74,27 @@ d:DesignHeight="720" d:DesignWidth="1280"
                 <TextBlock Text="Информация о занятии" FontWeight="SemiBold" Grid.ColumnSpan="3" FontSize="32"/>
 
                 <Grid  Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock  Text="{Binding Title}" FontSize="30"/>
-                    <TextBlock  Text="{Binding Date, StringFormat=dd/MM/yyy}"  Grid.Row="2"/>
-                    <TextBlock  Text="{Binding Time}" Grid.Row="3"/>
-                    <TextBlock  Text="{Binding Interesting.Title}" Grid.Row="4"/>
+                    <TextBlock Text="Занятие" FontWeight="SemiBold"/>
+                    <TextBlock Text="Дата" Grid.Row="1" FontWeight="SemiBold"/>
+                    <TextBlock Text="Время" Grid.Row="2"  FontWeight="SemiBold"/>
+                    <TextBlock Text="Интерес" Grid.Row="3" FontWeight="SemiBold"/>
+
+                    <TextBlock  Text="{Binding Title}" FontSize="30" Grid.Column="2"/>
+                    <TextBlock  Text="{Binding Date, StringFormat=dd/MM/yyy}" Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock  Text="{Binding Time}" Grid.Row="2" Grid.Column="2"/>
+                    <TextBlock  Text="{Binding Interesting.Title}" Grid.Row="4" Grid.Column="2"/>
                 </Grid>
 
                 <TextBlock Text="Описание " Grid.Row="4" FontWeight="SemiBold" Grid.ColumnSpan="3"/>

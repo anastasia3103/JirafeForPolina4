@@ -52,16 +52,16 @@
             <ListView Name="ActivityLv" SelectionChanged="ActivityLv_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Дата" Width="150" DisplayMemberBinding="{Binding Price, StringFormat={}{0} ₽}"/>
-                        <GridViewColumn Header="Время" Width="150" DisplayMemberBinding="{Binding Brand.Title}"/>
-                        <GridViewColumn Header="Занятие" Width="200" DisplayMemberBinding="{Binding Title}"/>
-                        <GridViewColumn Header="Интерес" Width="150" DisplayMemberBinding="{Binding Brand.Title}"/>
+                        <GridViewColumn Header="Дата" Width="130" DisplayMemberBinding="{Binding Date, StringFormat={}{0:dd/MM/yyy}}"/>
+                        <GridViewColumn Header="Время" Width="100" DisplayMemberBinding="{Binding Time}"/>
+                        <GridViewColumn Header="Занятие" Width="230" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Интерес" Width="230" DisplayMemberBinding="{Binding Interesting.Title}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
 
             <!--Описание Занятий-->
-            <Grid Margin="10" Grid.Column="2" Name="UserDetailsGrid">
+            <Grid Margin="10" Grid.Column="2" Name="ActivityDetailsGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="10" />
@@ -94,9 +94,9 @@
                     <TextBlock Text="Интерес" Grid.Row="3" FontWeight="SemiBold"/>
 
                     <TextBox  Text="{Binding Title}" Margin="5"  Grid.Column="3"/>
-                    <DatePicker  Text="{Binding Date, StringFormat=dd/MM/yyy}" Margin="5" Grid.Column="3" Grid.Row="1"/>
+                    <DatePicker  Text="{Binding Date, StringFormat=dd/MM/yyy}" Margin="5" Grid.Column="3" Grid.Row="1" />
                     <TextBox  Text="{Binding Time}" Grid.Row="2" Grid.Column="3" Margin="5"/>
-                    <ComboBox  Text="{Binding Interesting.Title}" Grid.Row="3" Grid.Column="3" Margin="5"/>
+                    <ComboBox  Text="{Binding Interesting.Title}" Name="InteresCmb" SelectionChanged="InteresCmb_SelectionChanged" Grid.Row="3" Grid.Column="3" Margin="5"/>
                 </Grid>
 
                 <TextBlock Text="Описание " Grid.Row="4" FontWeight="SemiBold" Grid.ColumnSpan="3"/>

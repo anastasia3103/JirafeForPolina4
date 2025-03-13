@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using JirafeForPolina.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,29 +22,73 @@ namespace JirafeForPolina.View.Pages
     /// </summary>
     public partial class MyActivityPage : Page
     {
+
+        private List<Activity> activity = App.context.Activity.ToList();
+        private List<Interesting> interesting = App.context.Interesting.ToList();
         public MyActivityPage()
         {
             InitializeComponent();
+
+            FilterCmb.SelectedValuePath = "Id";
+            FilterCmb.DisplayMemberPath = "Title";
+            FilterCmb.ItemsSource = interesting;
+
+            ActivityLv.ItemsSource = activity;
+
+
+            interesting.Insert(0, new Interesting() { Title = "Все интересы" });
+
+
+
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ActivityLv.ItemsSource = App.context.Activity.
+                Where(a => a.Title.Contains(ActivityTb.Text)).ToList();
         }
 
         private void FilterCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+
+            Interesting interesting = FilterCmb.SelectedItem as Interesting;
+            if (FilterCmb.SelectedIndex != 0)
+            {
+                ActivityLv.ItemsSource = activity.Where(x => x.Interesting.Id == interesting.Id);
+
+            }
+            else
+            {
+                ActivityLv.ItemsSource = activity;
+            }
         }
 
         private void ActivityLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            ActivityDetailsGrid.DataContext = ActivityLv.SelectedItem as RecordOnActivity;
         }
 
-        private void RecordBtn_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void OtmenaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (ActivityLv.SelectedItem == null)
+            {
+                MessageBoxHelper.Information("Выберите занятие для отмены");
+                return;
+            }
+
+            RecordOnActivity selectedActivity = ActivityLv.SelectedItem as RecordOnActivity;
+
+            var res = MessageBox.Show($"Вы уверены, что хотите удалить?", "Подтверждение", MessageBoxButton.YesNo);
+
+            if (res == MessageBoxResult.Yes)
+            {
+                App.context.RecordOnActivity.Remove(selectedActivity);
+                App.context.SaveChanges();
+                MessageBoxHelper.Information("Удалено");
+                ActivityLv.ItemsSource = App.context.RecordOnActivity.ToList();
+            }
         }
     }
 }

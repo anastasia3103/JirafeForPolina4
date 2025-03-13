@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using JirafeForPolina.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,9 +33,33 @@ namespace JirafeForPolina.View.Windows
 
         private void EntryBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
+            try
+            {
+                Profile currentUser = App.context.Profile.FirstOrDefault(p => p.Login == LoginTb.Text 
+                && p.Password == PasswordPb.Password);
+
+                if (currentUser != null)
+                {
+                    App.currentUser = currentUser;
+                    MessageBoxHelper.Information("Авторизация прошла успешно!");
+                    
+
+
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBoxHelper.Warning("Пользователь не найден!");
+                }
+
+            }
+            catch (Exception exception)
+            {
+                MessageBoxHelper.Error(exception);
+            }
+
         }
 
         private void RegistrationHL_Click_1(object sender, RoutedEventArgs e)
