@@ -29,22 +29,31 @@ namespace JirafeForPolina.View.Windows
 
         }
 
-        private void ActivityBtnHl_Click(object sender, RoutedEventArgs e)
+        private void ActivityBtn_Click(object sender, RoutedEventArgs e)
         {
 
             FrameHelper.MainAdminFrame = MainAdminFrame;
             FrameHelper.MainAdminFrame.Navigate(new View.Pages.AdminActivityPage());
         }
 
-        private void TicketsHl_Click(object sender, RoutedEventArgs e)
+        private void TicketsBtn_Click(object sender, RoutedEventArgs e)
         {
-            FrameHelper.MainAdminFrame.Navigate(new View.Pages.TicketsPage());
+
+
+            FrameHelper.MainAdminFrame = MainAdminFrame;
+            FrameHelper.MainAdminFrame.Navigate(new View.Pages.AdminTicketsPage());
         }
-
-
-        private void UserListHl_Click(object sender, RoutedEventArgs e)
+        
+        private void ListUserBtn_Click(object sender, RoutedEventArgs e)
         {
             FrameHelper.MainAdminFrame.Navigate(new View.Pages.ListUserPage());
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
         }
     }
 }

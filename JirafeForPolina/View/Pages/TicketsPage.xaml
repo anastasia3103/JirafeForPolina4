@@ -36,9 +36,18 @@ d:DesignHeight="720" d:DesignWidth="1280"
                 BorderBrush="#FF0078D7" BorderThickness="2" Width="580" Height="400" CornerRadius="5" Padding="30">
                 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Будние дни" FontSize="50" FontWeight="Bold"  />
-                    <TextBlock Text="Безлимит пн-чт ..............1290 ₽" FontSize="35"  Margin="0,5,0,0"/>
-                    <TextBlock Text="Безлимит пт .....................1490 ₽" FontSize="35"  Margin="0,5,0,0"/>
+                    <TextBlock Text="Будние дни" FontSize="45" FontWeight="Bold"/>
+
+                    <TextBlock FontSize="35"  Margin="0,5,0,0">
+                        Безлимит пн-чт ..............
+                        <TextBlock Name="PricePnChtTbl" FontSize="35"  Text="1290"/>
+                        ₽
+                    </TextBlock>
+                    <TextBlock FontSize="35"  Margin="0,5,0,0">
+                            Безлимит пт .....................
+                        <TextBlock Name="PricePtTbl" FontSize="35"  Text="1490"/>
+                           ₽
+                    </TextBlock>
                 </StackPanel>
             </Border>
 
@@ -46,8 +55,12 @@ d:DesignHeight="720" d:DesignWidth="1280"
          BorderBrush="#FF0078D7" BorderThickness="2" CornerRadius="5" Width="580" Height="400" Padding="30">
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Выходные дни" FontSize="50" FontWeight="Bold" />
-                    <TextBlock Text="Безлимит ...............1290 ₽" FontSize="35"  Margin="0,5,0,0"/>
+                    <TextBlock Text="Выходные дни" FontSize="45" FontWeight="Bold" />
+                    <TextBlock  FontSize="35"  Margin="0,5,0,0">
+                            Безлимит .....................
+                        <TextBlock Name="PriceHolidayTbl" FontSize="35"  Text="1690"/>
+                             ₽
+                    </TextBlock>
                 </StackPanel>
             </Border>
         </Grid>

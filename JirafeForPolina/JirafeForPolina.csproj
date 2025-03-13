@@ -66,6 +66,12 @@
     <Compile Include="View\Pages\AdminActivityPage.xaml.cs">
       <DependentUpon>AdminActivityPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\AdminTicketPage.xaml.cs">
+      <DependentUpon>AdminTicketPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\AdminTicketsPage.xaml.cs">
+      <DependentUpon>AdminTicketsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\ListUserPage.xaml.cs">
       <DependentUpon>ListUserPage.xaml</DependentUpon>
     </Compile>
@@ -158,6 +164,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\AdminActivityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\AdminTicketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\AdminTicketsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

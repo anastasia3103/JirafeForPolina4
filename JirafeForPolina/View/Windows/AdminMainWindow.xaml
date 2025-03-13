@@ -13,47 +13,45 @@ WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
             <RowDefinition Height="10" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Grid Background="#f2ddc6">
+        <Grid Background="#F9EFE0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="AUTO" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="150" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock>
-        <Hyperlink>
-            лого
-        </Hyperlink>
-            </TextBlock>
 
-            <TextBlock Text="Удивительный жираф" FontSize="30"
-                       Grid.Column="2" FontWeight="Bold" />
+            <Image Source="/Resource/logotipJirafe.png" />
 
-            <StackPanel Margin="10" Grid.Column="5"
-                    Orientation="Horizontal">
+            <StackPanel  Grid.Column="4"
+                Orientation="Horizontal">
 
-                <TextBlock Grid.Column="4" VerticalAlignment="Center" FontFamily="Myanmar Text" FontWeight="Bold" FontSize="20">
-                    <Hyperlink Name="ActivityBtnHl" Foreground="#FF7DC269" Click="ActivityBtnHl_Click">
-                        Занятия
-                    </Hyperlink>
-                </TextBlock>
-                <Separator Height="0" Width="30"/>
-                <TextBlock Grid.Column="8" VerticalAlignment="Center" FontFamily="Myanmar Text" 
-                           FontWeight="Bold" FontSize="20">
-                <Hyperlink Name="TicketsHl" Foreground="#FF7DC269" Click="TicketsHl_Click">
-    Билеты
-</Hyperlink>
-                </TextBlock>
+                <Button FontFamily="Myanmar Text" Style="{DynamicResource MainBtn}" Margin="0 30 0 0"
+                   FontWeight="DemiBold" Width="160" Name="ActivityBtn"
+                Content="Занятия" Click="ActivityBtn_Click"  Height="70"/>
 
-                <Separator Height="0" Width="30"/>
-                <TextBlock Grid.Column="6" VerticalAlignment="Center" FontFamily="Myanmar Text"
-                       FontWeight="Bold" FontSize="20" >
-                      <Hyperlink Foreground="#FF7DC269" Name="UserListHl" Click="UserListHl_Click">
-                          Список пользователей
-                      </Hyperlink>
-                </TextBlock>
+                <Separator Height="0" Width="20"/>
+
+                <Button FontFamily="Myanmar Text" Style="{DynamicResource MainBtn}" Margin="0 30 0 0"
+                   FontWeight="DemiBold" Width="160" Name="TicketsBtn"
+                Content="Билеты" Click="TicketsBtn_Click"  Height="70"/>
+
+                <Separator Height="0" Width="20"/>
+
+                <Button FontFamily="Myanmar Text" Style="{DynamicResource MainBtn}" Margin="0 30 0 0"
+   FontWeight="DemiBold" Width="190" Name="ListUserBtn"
+Content="       Список&#10; пользователей" Click="ListUserBtn_Click"  Height="70"/>
+                
+                <Separator Height="0" Width="20"/>
+
+                <Button FontFamily="Myanmar Text"  Margin="0 30 0 0"
+                 FontWeight="DemiBold" Width="140" Name="ExitBtn" Background="Transparent"
+                Content="Выйти" Click="ExitBtn_Click"  Height="50"
+                        BorderBrush="Transparent"/>
+                
+                
+
+                
 
 
             </StackPanel>
