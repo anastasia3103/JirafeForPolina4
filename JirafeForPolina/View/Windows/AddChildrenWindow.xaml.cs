@@ -38,5 +38,10 @@ namespace JirafeForPolina.View.Windows
         {
 
         }
+
+        private void PhotoBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

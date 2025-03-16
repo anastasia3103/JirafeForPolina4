@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JirafeForPolina.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace JirafeForPolina.View.Pages
     /// </summary>
     public partial class ListUserPage : Page
     {
+       public List<User> user = App.context.User.ToList();
         public ListUserPage()
         {
             InitializeComponent();
+
+            UsersLv.ItemsSource = user;
+
+
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using JirafeForPolina.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,14 +23,19 @@ namespace JirafeForPolina.View.Pages
     /// </summary>
     public partial class ProfilePage : Page
     {
+
+        public List<User> user = App.currentUser.User.ToList();
+
         public ProfilePage()
         {
             InitializeComponent();
+
         }
 
         private void EditTb_Click(object sender, RoutedEventArgs e)
         {
-
+            App.context.SaveChanges();
+            MessageBoxHelper.Information("Информация успешно изменена!");
         }
     }
 }

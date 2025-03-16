@@ -2,7 +2,9 @@
 using JirafeForPolina.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,7 +35,9 @@ namespace JirafeForPolina.View.Pages
             FilterCmb.DisplayMemberPath = "Title";
             FilterCmb.ItemsSource = interesting;
 
-            ActivityLv.ItemsSource = activity;
+
+
+
 
 
             interesting.Insert(0, new Interesting() { Title = "Все интересы" });

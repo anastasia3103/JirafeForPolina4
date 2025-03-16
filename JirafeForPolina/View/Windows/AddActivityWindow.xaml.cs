@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using JirafeForPolina.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,10 @@ namespace JirafeForPolina.View.Windows
         public AddActivityWindow()
         {
             InitializeComponent();
+
+            ActivityCategoryCmb.SelectedValuePath = "Id";
+            ActivityCategoryCmb.DisplayMemberPath = "Title";
+            ActivityCategoryCmb.ItemsSource = App.context.Interesting.ToList();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -32,6 +38,26 @@ namespace JirafeForPolina.View.Windows
         private void AddActivityBtn_Click(object sender, RoutedEventArgs e)
         {
 
+            Activity activity = new Activity()
+            {
+                Title = ActivityNameTb.Text,
+                Date = (DateTime)ActivityDp.SelectedDate,
+                Time = ActivityTimeTb.Text,
+                Description = ActivityDescriptionTb.Text,
+                Interesting = ActivityCategoryCmb.SelectedItem as Interesting
+
+            };
+
+
+            App.context.Activity.Add(activity);
+            App.context.SaveChanges();
+            MessageBoxHelper.Information("Занятие добавлено!");
+
+            ActivityNameTb.Text = "";
+            ActivityDescriptionTb.Text = "";
+            ActivityTimeTb.Text = "";
+            ActivityDp.Text = "";
+            ActivityCategoryCmb.Text = "";
         }
     }
 }

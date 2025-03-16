@@ -53,10 +53,10 @@ d:DesignHeight="720" d:DesignWidth="1280"
             <ListView Name="ActivityLv" SelectionChanged="ActivityLv_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Дата" Width="130" DisplayMemberBinding="{Binding Date, StringFormat={}{0:dd/MM/yyy}}"/>
-                        <GridViewColumn Header="Время" Width="100" DisplayMemberBinding="{Binding Time}"/>
-                        <GridViewColumn Header="Занятие" Width="230" DisplayMemberBinding="{Binding Title}"/>
-                        <GridViewColumn Header="Интерес" Width="230" DisplayMemberBinding="{Binding Interesting.Title}"/>
+                        <GridViewColumn Header="Дата" Width="130" DisplayMemberBinding="{Binding Activity.Date, StringFormat={}{0:dd/MM/yyy}}"/>
+                        <GridViewColumn Header="Время" Width="100" DisplayMemberBinding="{Binding Activity.Time}"/>
+                        <GridViewColumn Header="Занятие" Width="230" DisplayMemberBinding="{Binding Activity.Title}"/>
+                        <GridViewColumn Header="Интерес" Width="230" DisplayMemberBinding="{Binding Activity.Interesting.Title}"/>
                         </GridView>
                 </ListView.View>
             </ListView>

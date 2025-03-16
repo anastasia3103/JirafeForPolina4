@@ -15,7 +15,7 @@ namespace JirafeForPolina.Model
     public partial class RecordOnActivity
     {
         public int Id { get; set; }
-        public int IsUser { get; set; }
+        public int IdUser { get; set; }
         public int IdActivity { get; set; }
     
         public virtual Activity Activity { get; set; }

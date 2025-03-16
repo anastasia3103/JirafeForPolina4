@@ -23,7 +23,7 @@ namespace JirafeForPolina.Model
         public int Id { get; set; }
         public string Title { get; set; }
         public System.DateTime Date { get; set; }
-        public System.TimeSpan Time { get; set; }
+        public string Time { get; set; }
         public string Description { get; set; }
         public int IdInteresting { get; set; }
     
