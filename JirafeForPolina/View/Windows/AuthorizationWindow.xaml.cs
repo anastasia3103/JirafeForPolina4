@@ -45,11 +45,19 @@ namespace JirafeForPolina.View.Windows
                     App.currentUser = currentUser;
                     MessageBoxHelper.Information("Авторизация прошла успешно!");
                     
+                    if(currentUser.IdRole == 1)
+                    {
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        AdminMainWindow adminMainWindow = new AdminMainWindow();
+                        adminMainWindow.Show();
+                        Close();
+                    }
 
-
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    Close();
                 }
                 else
                 {
