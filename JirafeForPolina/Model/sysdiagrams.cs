@@ -12,16 +12,12 @@ namespace JirafeForPolina.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Children
+    public partial class sysdiagrams
     {
-        public int Id { get; set; }
-        public string Firstname { get; set; }
-        public string Name { get; set; }
-        public string Middlename { get; set; }
-        public System.DateTime DateOfBirth { get; set; }
-        public int IdUser { get; set; }
-        public string Features { get; set; }
-    
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

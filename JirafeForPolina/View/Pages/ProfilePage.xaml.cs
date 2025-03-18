@@ -1,8 +1,10 @@
 ﻿using JirafeForPolina.AppData;
 using JirafeForPolina.Model;
+using JirafeForPolina.View.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,18 +26,38 @@ namespace JirafeForPolina.View.Pages
     public partial class ProfilePage : Page
     {
 
-        public List<User> user = App.currentUser.User.ToList();
 
         public ProfilePage()
         {
             InitializeComponent();
 
+            ChildLv.ItemsSource = App.context.Children.
+                Where(u => u.User.Id == App.currentUser.Id).ToList();
         }
 
         private void EditTb_Click(object sender, RoutedEventArgs e)
         {
             App.context.SaveChanges();
             MessageBoxHelper.Information("Информация успешно изменена!");
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            MainWindow mainWindow = new MainWindow();
+            authorizationWindow.Show();
+            mainWindow.Close();
+        }
+
+        private void ChildLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void AddChildBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddChildrenWindow addChildrenWindow = new AddChildrenWindow();
+            addChildrenWindow.ShowDialog();
         }
     }
 }

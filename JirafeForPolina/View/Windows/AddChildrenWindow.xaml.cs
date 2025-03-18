@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JirafeForPolina.AppData;
+using JirafeForPolina.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,24 +26,30 @@ namespace JirafeForPolina.View.Windows
             InitializeComponent();
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ExitHL_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+            Children children = new Children()
+            {
+                Name = NameTb.Text,
+                Firstname = FirstnameTb.Text,
+                Middlename = MiddlenameTb.Text,
+                DateOfBirth = (DateTime)DateOfBirthDp.SelectedDate,
+                Features = DescriptionTb.Text,
+                IdUser = App.currentUser.Id
 
+            };
+
+            App.context.Children.Add(children);
+            App.context.SaveChanges();
+            MessageBoxHelper.Information("Ребенок добавлен!");
+
+            NameTb.Text = "";
+            FirstnameTb.Text = "";
+            MiddlenameTb.Text = "";
+            DateOfBirthDp.Text = "";
+            DescriptionTb.Text = "";
         }
 
-        private void PhotoBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using JirafeForPolina.Model;
+﻿using JirafeForPolina.AppData;
+using JirafeForPolina.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,33 @@ namespace JirafeForPolina.View.Pages
         private void RecordBtn_Click(object sender, RoutedEventArgs e)
         {
 
+            //if (ActivityLv.SelectedItem != null)
+            //{
+
+            //    RecordOnActivity recordOnActivity = new RecordOnActivity()
+            //    {
+            //        IdUser = App.currentUser.Id,
+            //        IdActivity = Convert.ToInt32(ActivityLv.SelectedValue as Activity)
+            //    };
+
+            if (ActivityLv.SelectedItem is Activity selectedActivity)
+            {
+                RecordOnActivity recordOnActivity = new RecordOnActivity()
+                {
+                    IdUser = App.currentUser.Id,
+                    IdActivity = selectedActivity.Id
+                };
+
+                App.context.RecordOnActivity.Add(recordOnActivity);
+                App.context.SaveChanges();
+                MessageBoxHelper.Information("Запись прошла успешно!");
+            }
+
+
+            else
+            {
+                MessageBoxHelper.Information("Вы не выбрали занятие");
+            }
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)

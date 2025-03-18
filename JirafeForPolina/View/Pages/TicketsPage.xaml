@@ -33,7 +33,7 @@ d:DesignHeight="720" d:DesignWidth="1280"
 
 
             <Border VerticalAlignment="Center" HorizontalAlignment="Center" 
-                BorderBrush="#FF0078D7" BorderThickness="2" Width="580" Height="400" CornerRadius="5" Padding="30">
+                BorderBrush="#653D19" BorderThickness="2" Width="580" Height="400" CornerRadius="5" Padding="30">
                 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Будние дни" FontSize="45" FontWeight="Bold"/>
@@ -52,7 +52,7 @@ d:DesignHeight="720" d:DesignWidth="1280"
             </Border>
 
             <Border Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"  
-         BorderBrush="#FF0078D7" BorderThickness="2" CornerRadius="5" Width="580" Height="400" Padding="30">
+         BorderBrush="#653D19" BorderThickness="2" CornerRadius="5" Width="580" Height="400" Padding="30">
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Выходные дни" FontSize="45" FontWeight="Bold" />

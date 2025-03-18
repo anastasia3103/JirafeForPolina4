@@ -45,7 +45,8 @@
                         <GridViewColumn Header="Отчество"  DisplayMemberBinding="{Binding Middlename}"/>
                         <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding DateOfBirth, StringFormat={}{0:dd/MM/yyy}}"/>
                         <GridViewColumn Header="Номер телефона"  DisplayMemberBinding="{Binding NumberPhone}"/>
-                        <GridViewColumn Header="Ребенок"  DisplayMemberBinding="{Binding Children.Fullname}"/>
+                        <GridViewColumn Header="Фамилия ребенка"  DisplayMemberBinding="{Binding Children.Firstname}"/>
+                        <GridViewColumn Header="Имя ребенка"  DisplayMemberBinding="{Binding Children.Name}"/>
 
                     </GridView>
                 </ListView.View>

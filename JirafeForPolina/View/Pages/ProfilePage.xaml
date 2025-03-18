@@ -16,7 +16,12 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Профиль" FontSize="30" FontWeight="Black"
                    HorizontalAlignment="Center"/>
-        
+
+        <Button FontFamily="Myanmar Text"
+                 FontWeight="DemiBold" Width="140" Name="ExitBtn" Background="Transparent"
+                Content="Выйти" Click="ExitBtn_Click"  Height="50"
+                        BorderBrush="Transparent"  HorizontalAlignment="Right"/>
+
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -26,7 +31,7 @@
             
             <!--#region О себе-->
 
-            <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="10">
+            <Border BorderBrush="#653D19" BorderThickness="1" CornerRadius="5" Padding="10">
                 <Grid Name="UserDataListView" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -54,18 +59,18 @@
 
 
                     <TextBox Name="SurnameTb" Grid.Column="2"  Grid.Row="1" 
-                         Height="40" Text="{Binding Firstname}"/>
+                         Height="40" Text="Кахманова" />
                     <TextBox Name="NameTb" Grid.Column="2"  Grid.Row="2" 
-                         Height="40" Text="{Binding Name}"/>
+                         Height="40" Text="Дарья"/>
                     <TextBox Name="MiddlenameTb" Grid.Column="2"  Grid.Row="3" 
-                         Height="40" Text="{Binding Middlename}"/>
-                    <DatePicker Name="DateOfBirthDP" Text="{Binding DateOfBirt}"
+                         Height="40" Text="Порфеньыооы"/>
+                    <DatePicker Name="DateOfBirthDP" Text="1976-03-02"
                             Grid.Column="2" Height="40" VerticalAlignment="Center" 
-                            Grid.Row="4"  />
+                            Grid.Row="4" FontSize="20" />
                     <TextBox Name="PhoneTb" Grid.Column="2"  Grid.Row="5" 
-                         Height="40"  Text="{Binding NumberPhone}"/>
+                         Height="40"  Text="+7 (973) 708 14 12"/>
                     <TextBox Name="EmailTb" Grid.Column="2"  Grid.Row="6" 
-                         Height="40"  Text="{Binding Email}"/>
+                         Height="40"  Text="darya1976k@ya.ru"/>
 
                     <Button Content="Изменить" Name="EditTb" Click="EditTb_Click"
                         Grid.Column="2"  Grid.Row="7" 
@@ -77,24 +82,34 @@
             
             <!--#region О дете-->
 
-            <Border Grid.Column="2"      BorderBrush="Black" BorderThickness="1" CornerRadius="5" Padding="10">
+            <Border Grid.Column="2"      BorderBrush="#653D19" BorderThickness="1" CornerRadius="5" Padding="10">
                 <Grid >
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
                         <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Мои дети" Grid.ColumnSpan="3" FontSize="30"
+                    <TextBlock Text="Мои дети" 
+                               Grid.ColumnSpan="3" FontSize="30"
                                HorizontalAlignment="Center"/>
+               
+
+                <ListView Grid.Row="2"  Name="ChildLv" SelectionChanged="ChildLv_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Firstname}" />
+                                <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Middlename}"/>
+                                <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding DateOfBirth, StringFormat={}{0:dd/MM/yyy}}"/>
+                            </GridView>
+                    </ListView.View>
+                </ListView>
+
+                    <Button Content="Добавить ребенка" Name="AddChildBtn" Click="AddChildBtn_Click"
+                    Grid.Row="5"  HorizontalAlignment="Right" Width="250" />
                 </Grid>
             </Border>
 

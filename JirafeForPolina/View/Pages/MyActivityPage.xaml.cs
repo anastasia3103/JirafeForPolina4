@@ -36,7 +36,8 @@ namespace JirafeForPolina.View.Pages
             FilterCmb.ItemsSource = interesting;
 
 
-
+            ActivityLv.ItemsSource = App.context.RecordOnActivity.
+                Where( u => u.User.Id == App.currentUser.Id ).ToList();
 
 
 
@@ -64,7 +65,8 @@ namespace JirafeForPolina.View.Pages
             }
             else
             {
-                ActivityLv.ItemsSource = activity;
+                ActivityLv.ItemsSource = App.context.RecordOnActivity.
+                Where(u => u.User.Id == App.currentUser.Id).ToList(); ;
             }
         }
 
@@ -84,14 +86,16 @@ namespace JirafeForPolina.View.Pages
 
             RecordOnActivity selectedActivity = ActivityLv.SelectedItem as RecordOnActivity;
 
-            var res = MessageBox.Show($"Вы уверены, что хотите удалить?", "Подтверждение", MessageBoxButton.YesNo);
+            var res = MessageBox.Show($"Вы уверены, что хотите удалить?", 
+                "Подтверждение", MessageBoxButton.YesNo);
 
             if (res == MessageBoxResult.Yes)
             {
                 App.context.RecordOnActivity.Remove(selectedActivity);
                 App.context.SaveChanges();
                 MessageBoxHelper.Information("Удалено");
-                ActivityLv.ItemsSource = App.context.RecordOnActivity.ToList();
+                ActivityLv.ItemsSource = App.context.RecordOnActivity.
+                Where(u => u.User.Id == App.currentUser.Id).ToList();
             }
         }
     }

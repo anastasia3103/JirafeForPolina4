@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JirafeForPolina.View.Windows"
         mc:Ignorable="d"
-        Title="AddChildrenWindow" Height="520" Width="650">
+        Title="AddChildrenWindow" SizeToContent="WidthAndHeight" 
+        ResizeMode="NoResize" MinWidth="700" WindowStartupLocation="CenterScreen">
     <Grid Margin="40 40">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
@@ -16,44 +17,39 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
             <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="5" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="45" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="20" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.ColumnSpan="3" Text="Добавление ребёнка" HorizontalAlignment="Center" FontSize="35"/>
-        <TextBlock>
-            <Hyperlink Name="ExitHL" Click="ExitHL_Click">
-                Назад
-            </Hyperlink>
-        </TextBlock>
+        
 
-        <TextBlock Grid.Row="2" Text="ФИО ребенка" HorizontalAlignment="Center" />
-        <TextBlock Grid.Row="4" Text="Дата рождения" HorizontalAlignment="Center" />
-        <TextBlock Grid.Row="6" Text="Выберите пол" HorizontalAlignment="Center" />
-        <TextBlock Grid.Row="8" Text="Особенности" HorizontalAlignment="Center" />
-        <TextBlock Grid.Row="11" Text="Фотография" HorizontalAlignment="Center" />
-        <TextBlock Grid.Row="10" Grid.Column="2" FontSize="10"
+        <TextBlock Grid.Row="2" Text="Фамилия" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="4" Text="Имя" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="6" Text="Отчество" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="8" Text="Дата рождения" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="10" Text="Особенности" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="12" Grid.Column="2" FontSize="10"
                    Text="*если у ребенка нет особенностей, то оставьте поле пустым"
                    HorizontalAlignment="Left"/>
         
-        <TextBox Name="FullnameTb" Grid.Row="2" Grid.Column="2"/>
-        <DatePicker Name="DateOfBirthDp" Grid.Row="4" Grid.Column="2"/>
-        <ComboBox Name="GenderCmb" Grid.Row="6" Grid.Column="2"/>
-        <TextBox Name="DescriptionTb" Grid.Row="8" Grid.Column="2"/>
-        <Button Name="PhotoBtn" Grid.Row="11" Grid.Column="2" 
-                Content="Добавть фото" Click="PhotoBtn_Click"
-                HorizontalAlignment="Left" Width="175"
-                Background="Gray" />
+        <TextBox Name="FirstnameTb" Grid.Row="2" Grid.Column="2"/>
+        <TextBox Name="NameTb" Grid.Row="4" Grid.Column="2"/>
+        <TextBox Name="MiddlenameTb" Grid.Row="6" Grid.Column="2"/>
+        <DatePicker Name="DateOfBirthDp" Grid.Row="8" Grid.Column="2"/>
+        <TextBox Name="DescriptionTb" Grid.Row="10" Grid.Column="2"/>
+        
 
         <Button Grid.Column="3" Grid.Row="14" Content="Добавить" 
                 Name="AddBtn" Click="AddBtn_Click"  HorizontalAlignment="Right" Width="150"

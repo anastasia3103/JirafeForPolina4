@@ -31,6 +31,7 @@ namespace JirafeForPolina.Model
         public virtual DbSet<Profile> Profile { get; set; }
         public virtual DbSet<RecordOnActivity> RecordOnActivity { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

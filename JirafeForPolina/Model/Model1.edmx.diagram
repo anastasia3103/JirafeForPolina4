@@ -4,20 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="02aceaa803f94dc1bfad29ed95cb6435" Name="Diagram1">
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.Activity" Width="1.5" PointX="5.25" PointY="6.5" />
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.Children" Width="1.5" PointX="7.5" PointY="5.125" />
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.Interesting" Width="1.5" PointX="3" PointY="6.875" />
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.Profile" Width="1.5" PointX="3" PointY="2.625" />
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.RecordOnActivity" Width="1.5" PointX="7.5" PointY="1.75" />
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.Role" Width="1.5" PointX="0.75" PointY="2.875" />
-        <EntityTypeShape EntityType="LatyninaKursovayaModel.User" Width="1.5" PointX="5.25" PointY="2.125" />
-        <AssociationConnector Association="LatyninaKursovayaModel.FK_Activity_Interesting" />
-        <AssociationConnector Association="LatyninaKursovayaModel.FK_RecordOnActivity_Activity" />
-        <AssociationConnector Association="LatyninaKursovayaModel.FK_Children_User" />
-        <AssociationConnector Association="LatyninaKursovayaModel.FK_Profile_Role" />
-        <AssociationConnector Association="LatyninaKursovayaModel.FK_User_Profile" />
-        <AssociationConnector Association="LatyninaKursovayaModel.FK_RecordOnActivity_User" />
+      <Diagram DiagramId="be8fb24589bd410a8d5c7265952d3d6c" Name="Diagram1">
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.Activity" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.Children" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.Interesting" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.Profile" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.RecordOnActivity" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.Role" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LatyninaKursovayaModel.User" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="LatyninaKursovayaModel.FK_Activity_Interesting" ManuallyRouted="false" />
+        <AssociationConnector Association="LatyninaKursovayaModel.FK_RecordOnActivity_Activity" ManuallyRouted="false" />
+        <AssociationConnector Association="LatyninaKursovayaModel.FK_Children_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LatyninaKursovayaModel.FK_Profile_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="LatyninaKursovayaModel.FK_User_Profile" ManuallyRouted="false" />
+        <AssociationConnector Association="LatyninaKursovayaModel.FK_RecordOnActivity_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
