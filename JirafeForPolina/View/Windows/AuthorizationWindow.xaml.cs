@@ -28,7 +28,9 @@ namespace JirafeForPolina.View.Windows
 
         private void RegistrationHL_Click(object sender, RoutedEventArgs e)
         {
-
+            Registration1Window registration1Window = new Registration1Window();
+            registration1Window.Show();
+            Close();
         }
 
         private void EntryBtn_Click(object sender, RoutedEventArgs e)
