@@ -9,10 +9,14 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         MinHeight="200" MinWidth="500" >
     <Grid Margin="20">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="\Resource\фон.jpg" />
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="10" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="300" />
             <RowDefinition Height="10" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -22,9 +26,14 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
-        <Image Height="200" Source="/Resource/милижираф.jpg"  Grid.Row="2"/>
-        <TextBlock Text="Удивительный" Grid.Row="4" HorizontalAlignment="Center" FontSize="45"/>
-        <TextBlock Text="Жираф" Grid.Row="5" HorizontalAlignment="Center" FontSize="50"/>
+
+
+        <Image Source="\Resource\Картинка Жираф.png" Grid.Row="2"/>
+
+
+        <TextBlock Text="УдИвиТельНый" Grid.Row="4" HorizontalAlignment="Center" Foreground="#FDAC54" FontSize="50"/>
+        <TextBlock Text="Ж И Р А Ф" Foreground="#653D19" Grid.Row="5"
+FontSize="50" HorizontalAlignment="Center"/>
 
         <Button Name="RegBtn" Width="300" Content="Зарегистрироваться" FontWeight="Bold"
                 Grid.Row="9" Click="RegBtn_Click"/>
