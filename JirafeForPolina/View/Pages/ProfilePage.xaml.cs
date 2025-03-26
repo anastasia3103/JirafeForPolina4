@@ -33,6 +33,8 @@ namespace JirafeForPolina.View.Pages
 
             ChildLv.ItemsSource = App.context.Children.
                 Where(u => u.User.Id == App.currentUser.Id).ToList();
+
+            UserDataGrid.DataContext = App.context.User.ToList();
         }
 
         private void EditTb_Click(object sender, RoutedEventArgs e)

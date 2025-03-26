@@ -21,19 +21,21 @@ namespace JirafeForPolina.View.Pages
     /// </summary>
     public partial class ListUserPage : Page
     {
+       public List<Children> children = App.context.Children.ToList();
        public List<User> user = App.context.User.ToList();
         public ListUserPage()
         {
             InitializeComponent();
 
-            UsersLv.ItemsSource = user;
+            UsersLv.ItemsSource = children;
 
 
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            UsersLv.ItemsSource = user.
+               Where(p => p.Firstname.Contains(ActivityTb.Text)).ToList();
         }
     }
 }
